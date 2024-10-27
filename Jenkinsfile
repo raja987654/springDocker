@@ -1,4 +1,5 @@
-pipeline {
+
+         pipeline {
     agent any
     
     tools {
@@ -50,10 +51,8 @@ pipeline {
             echo 'Pipeline échoué!'
         }
         always {
-            // Ensure cleanWs is executed in a node context
-            node {
-                cleanWs()
-            }
+            // Using cleanWs in the always block without node
+            cleanWs()
         }
     }
 }
