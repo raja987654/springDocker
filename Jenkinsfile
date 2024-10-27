@@ -18,7 +18,7 @@
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    credentialsId: 'github-credentials',
+                   
                     url: 'https://github.com/raja987654/springDocker.git'
             }
         }
@@ -50,9 +50,7 @@
         failure {
             echo 'Pipeline échoué!'
         }
-        always {
-            // Using cleanWs in the always block without node
-            cleanWs()
+      
         }
     }
 }
