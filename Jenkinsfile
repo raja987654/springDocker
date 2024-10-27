@@ -6,9 +6,7 @@
         gradle 'Gradle'
     }
     
-    environment {
-        GITHUB_CREDENTIALS = credentials('github-credentials')
-    }
+   
     
     triggers {
         githubPush()
