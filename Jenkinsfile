@@ -50,8 +50,10 @@ pipeline {
             echo 'Pipeline échoué!'
         }
         always {
-            // Nettoyage de l'espace de travail
-            cleanWs()
+            // Ensure cleanWs is executed in a node context
+            node {
+                cleanWs()
+            }
         }
     }
 }
